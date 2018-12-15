@@ -1,0 +1,25 @@
+<div>
+	<mat-form-field>
+		<input matInput [placeholder]="Details.IsMenuIcon ? 'Icon' : 'Text'" [(ngModel)]="Details.MenuText" />
+	</mat-form-field>
+
+	<mat-slide-toggle class="push-right" [(ngModel)]="Details.IsMenuIcon">Is Menu Icon</mat-slide-toggle>
+</div>
+
+<mat-toolbar>
+	<button mat-raised-button class="push-left" (click)="AddPageElement()">
+		<mat-icon>add</mat-icon> Add Menu Element
+	</button>
+</mat-toolbar>
+
+<div *ngIf="Details && Details.Elements">
+	<ng-container *ngFor="let pe of Details.Elements; let i = index;">
+		<div class="{{pe.Rendering ? pe.Rendering.Lookup || '' : ''}}">
+			<forge-page-element [element]="pe" [state]="GetBuilderState(pe)" [context]="Context" [data]="Data" [force-header]="true" [show-delete-action]="false">
+				<ng-container ngProjectAs="main-menu-actions">
+					<button mat-menu-item (click)="RemovePageElement(pe, i)">Delete</button>
+				</ng-container>
+			</forge-page-element>
+		</div>
+	</ng-container>
+</div>

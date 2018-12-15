@@ -1,0 +1,12 @@
+<mat-menu #appMenu="matMenu">
+	<ng-container *ngFor="let info of RenderElements; let i = index;">
+		<forge-page-element [element]="info.Element" state="Render" [context]="info.Context" [data]="Data">
+		</forge-page-element>
+	</ng-container>
+</mat-menu>
+
+<button mat-icon-button [matMenuTriggerFor]="appMenu">
+	<span *ngIf="!Details.IsMenuIcon">{{Details.MenuText}}</span>
+
+	<mat-icon *ngIf="Details.IsMenuIcon">{{Details.MenuText}}</mat-icon>
+</button>
