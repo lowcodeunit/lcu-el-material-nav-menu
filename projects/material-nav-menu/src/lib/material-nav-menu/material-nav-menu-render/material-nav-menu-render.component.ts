@@ -1,5 +1,6 @@
 import { Component, Injector } from '@angular/core';
-import { IControlRender, ForgeGenericControl } from '@lowcodeunit/elements';
+import { IControlRender } from '@lcu/elements';
+import { ForgeGenericControl } from '@lcu/daf-ui';
 import { ForgeMaterialNavMenuDetails, ForgeMaterialNavMenuConfig } from '../material-nav-menu.core';
 
 @Component({
