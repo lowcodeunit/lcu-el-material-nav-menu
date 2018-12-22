@@ -6,6 +6,7 @@ import { ForgeMaterialNavMenuBuilderComponent } from './material-nav-menu-builde
 import { ForgeMaterialNavMenuMarketplaceComponent } from './material-nav-menu-marketplace/material-nav-menu-marketplace.component';
 import { ForgeMaterialNavMenuRenderComponent } from './material-nav-menu-render/material-nav-menu-render.component';
 import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule, MatSlideToggleModule, MatToolbarModule } from '@angular/material';
+import { DAFUIModule } from '@lcu/daf-ui';
 
 export class ForgeMaterialNavMenuDisplayModule extends BaseDisplayModule {
 	public Builder() {
@@ -30,6 +31,7 @@ var comps = [
 @NgModule({
 	imports: [
 		FathymSharedModule,
+		DAFUIModule,
 		DndModule,
 		MatButtonModule,
 		MatFormFieldModule,
